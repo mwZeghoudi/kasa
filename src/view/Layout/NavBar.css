@@ -5,27 +5,22 @@
   margin: 40px 0;
   padding-left: calc(0.06 * 100vw);
   padding-right: calc(0.06 * 100vw);
-  font-size: calc(100vw / 50);
+  font-size: calc(100vw / 60);
 }
 .nav-logo {
-  font-size: calc(100vw / 15);
+  font-size: calc(100vw / 25);
   color: #ff6060;
   display: inline;
 }
 .nav-logo .logo {
   display: inline-block;
   position: relative;
-  width: calc(100vw / 22);
+  width: calc(100vw / 37);
 }
 .nav-logo .logo .logo-img {
   width: 100%;
   position: absolute;
-  bottom: calc(-20.88vw / 15);
+  bottom: calc(-20.88vw / 25);
   margin: 0 2.5%;
 }
-.nav-bar ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-}
+
