@@ -47,6 +47,9 @@ export default function Card(props) {
     cardStyle.width = "calc(100vw * 0.85)";
     cardStyle.justifyContent = "center";
     cardStyle.padding = "calc(100vw * 0.03)";
+    if (!props.content) {
+      cardStyle.height = "calc(100vw * 0.16)";
+    }
     content = (
       <div className="card" style={cardStyle}>
         <span className="grey-filter" style={filterStyle}></span>
