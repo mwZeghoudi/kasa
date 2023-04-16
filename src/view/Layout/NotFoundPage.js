@@ -1,6 +1,8 @@
 import React from "react";
+import Card from "../../Component/Card";
 import "./NotFoundPage.css";
-function NotFoundPage() {
+
+export default function NotFoundPage() {
   return (
     <div className="error-404">
       <h2>
@@ -16,9 +18,8 @@ function NotFoundPage() {
         4
       </h2>
       <h1>Oups! La page que vous demandez n'existe pas.</h1>
+      <Card rounded={20} gradient={true} content={"test"} isLocation={true} />
       <a href="">Retourner sur la page d’accueil</a>
     </div>
   );
 }
-
-export default NotFoundPage;
