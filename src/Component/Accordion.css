@@ -1,0 +1,9 @@
+.accordion-btn {
+  background-color: #ff6060;
+  color: white;
+  border: none;
+  width: 100%;
+  height: calc(100vw / 25);
+  text-align: left;
+  font-size: calc(100vw / 60);
+}
