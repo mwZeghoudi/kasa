@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Card from "../../Component/Card";
 import "./NotFoundPage.css";
 
@@ -18,7 +19,6 @@ export default function NotFoundPage() {
         4
       </h2>
       <h1>Oups! La page que vous demandez n'existe pas.</h1>
-      <Card rounded={20} gradient={true} content={"test"} isLocation={true} />
       <a href="">Retourner sur la page d’accueil</a>
     </div>
   );

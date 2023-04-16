@@ -1,11 +1,8 @@
 .card {
   padding: 50px;
   position: relative;
-  width: calc(100vw / 5);
-  height: calc(100vw / 5);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-flow: wrap;
 }
 .gradient {
   width: 100%;
@@ -22,4 +19,5 @@
 .content {
   position: relative;
   z-index: 2;
+  font-size: calc(100vw / 70);
 }
