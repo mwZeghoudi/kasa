@@ -3,7 +3,7 @@ import "./NavBar.css";
 import NavBarLinks from "../../Component/NavBarLinks";
 export default function Navbar(props) {
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" style={{ color: "red" }}>
       <div className="nav-logo">
         K
         <div className="logo" tabIndex={0}>
