@@ -1,9 +1,23 @@
+.accordion {
+  background-color: #f6f6f6;
+  font-size: calc(100vw / 60);
+}
 .accordion-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #ff6060;
   color: white;
+  text-align: left;
   border: none;
   width: 100%;
   height: calc(100vw / 25);
-  text-align: left;
   font-size: calc(100vw / 60);
+  padding: 0 calc(100vw / 60);
+}
+.accordion-content {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 calc(100vw / 60);
 }

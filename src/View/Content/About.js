@@ -13,7 +13,16 @@ export default function About() {
           "https://img.freepik.com/photos-gratuite/jetee-au-bord-lac-hallstatt-autriche_181624-44201.jpg"
         }
       />
-      <Accordion rounded={20}>Fiabilite</Accordion>
+      <Accordion name={"Fiabilite"} rounded={5} width={"70%"}>
+        Les annonces postées sur Kasa garantissent une fiabilité totale. Les
+        photos sont conformes aux logements, et toutes les informations sont
+        régulièrement vérifiées par nos équipes.
+      </Accordion>
+      <Accordion name={"Respect"} rounded={5} width={"70%"}>
+        La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
+        comportement discriminatoire ou de perturbation du voisinage entraînera
+        une exclusion de notre plateforme.
+      </Accordion>
     </div>
   );
 }
