@@ -16,7 +16,8 @@ export default function About() {
       <Accordion name={"Fiabilite"} rounded={5} width={"70%"}>
         Les annonces postées sur Kasa garantissent une fiabilité totale. Les
         photos sont conformes aux logements, et toutes les informations sont
-        régulièrement vérifiées par nos équipes.
+        régulièrement vérifiées par nos équipeskkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+        a;oisjdmaps'okdaw das daw d afgawfdawd awfg awd wagf a dfaw faw faw .
       </Accordion>
       <Accordion name={"Respect"} rounded={5} width={"70%"}>
         La bienveillance fait partie des valeurs fondatrices de Kasa. Tout

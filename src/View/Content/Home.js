@@ -2,10 +2,18 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Card from "../../Component/Card";
 import "./Home.css";
+import { createClient } from "pexels";
+
+const client = createClient(
+  "IUYd1xTYs3jOIKIQMrVB5nQrBu6uZ2puDY8kZnqqCD6PClurqoReoeva"
+);
+
+client.photos.curated({ per_page: 1 }).then((photos) => {
+  console.log(photos);
+});
 
 export default function Home() {
   const [housing, setHousing] = useState([]);
-  let offers = <></>;
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/logement-data.json`)

@@ -1,5 +1,7 @@
 .card {
   padding: 50px;
+  background: #ff6060;
+  color: white;
   position: relative;
   display: flex;
   flex-flow: wrap;
@@ -20,4 +22,22 @@
   position: relative;
   z-index: 2;
   font-size: calc(100vw / 70);
+}
+.grey-card {
+  background: #f7f7f7;
+  width: calc(100vw * 0.85);
+  gap: 25px;
+}
+
+.location-card {
+  padding: 20px;
+  width: calc(((100vw * 0.85) / 3) - 50px);
+  height: calc(((100vw * 0.85) / 3) - 50px);
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.banner-card {
+  width: calc(100vw * 0.85);
+  justify-content: center;
+  padding: calc(100vw * 0.03);
 }
