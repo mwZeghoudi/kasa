@@ -34,7 +34,7 @@ export default function Accordion(props) {
   };
 
   return (
-    <div
+    <article
       className={`accordion `}
       style={{ width: props.width, borderRadius: `${props.rounded}px` }}
     >
@@ -49,6 +49,6 @@ export default function Accordion(props) {
       <div className="accordion-content" style={contentStyle}>
         <p ref={contentRef}>{props.children}</p>
       </div>
-    </div>
+    </article>
   );
 }

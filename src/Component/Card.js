@@ -11,9 +11,9 @@ export default function Card(props) {
 
   if (props.isGrey) {
     content = (
-      <div className="card grey-card" style={cardStyle}>
+      <section className="card grey-card" style={cardStyle}>
         {props.children}
-      </div>
+      </section>
     );
   }
 
