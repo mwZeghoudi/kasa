@@ -22,5 +22,8 @@
 .accordion-content {
   width: 100%;
   overflow: hidden;
-  padding: 0 calc(100vw / 60);
+  transition: height 0.5s ease-in-out;
+}
+.accordion-content p {
+  padding: calc(100vw / 60);
 }

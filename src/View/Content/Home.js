@@ -2,10 +2,29 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Card from "../../Component/Card";
 import "./Home.css";
+import { createClient } from "pexels";
 
+const client = createClient(
+  "IUYd1xTYs3jOIKIQMrVB5nQrBu6uZ2puDY8kZnqqCD6PClurqoReoeva"
+);
+const query = "Landscape";
+const perPage = 80; // number of photos to retrieve per page
+const randomPage = Math.floor(Math.random() * 10) + 1; // get a random page between 1 and 10
+
+client.photos
+  .search({
+    query,
+    per_page: perPage,
+    page: randomPage,
+    orientation: "landscpae",
+  })
+  .then((photos) => {
+    const randomIndex = Math.floor(Math.random() * perPage); // get a random index within the retrieved photos
+    const randomPhoto = photos.photos[randomIndex]; // get the random photo
+    console.log(randomPhoto);
+  });
 export default function Home() {
   const [housing, setHousing] = useState([]);
-  let offers = <></>;
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/logement-data.json`)
