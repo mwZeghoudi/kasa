@@ -9,12 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Accordion(props) {
   library.add(faChevronUp);
   const [isActive, setIsActive] = useState(false);
-  const contentRef = useRef(null); // create a ref for the content element
+  const [flip, setFlip] = useState("");
+  const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(100);
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize); // add the event listener to the window object
-    return () => window.removeEventListener("resize", handleResize); // remove the event listener on cleanup
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -23,10 +24,15 @@ export default function Accordion(props) {
 
   const handleClick = () => {
     setIsActive(!isActive);
+    if (!isActive) {
+      setFlip("vertical");
+    } else {
+      setFlip(false);
+    }
   };
 
   const handleResize = () => {
-    setContentHeight(contentRef.current.offsetHeight); // update the height of the content element on resize
+    setContentHeight(contentRef.current.offsetHeight);
   };
 
   const contentStyle = {
@@ -44,7 +50,7 @@ export default function Accordion(props) {
         onClick={handleClick}
       >
         {props.name}
-        <FontAwesomeIcon icon="chevron-up" flip={isActive ? "vertical" : ""} />
+        <FontAwesomeIcon icon="chevron-up" flip={flip} />
       </button>
       <div className="accordion-content" style={contentStyle}>
         <p ref={contentRef}>{props.children}</p>
