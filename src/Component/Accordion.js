@@ -38,10 +38,10 @@ export default function Accordion(props) {
   const contentStyle = {
     height: isActive ? `${contentHeight}px` : "0px",
   };
-
+  console.log(props.list);
   return (
     <article
-      className={`accordion `}
+      className={`accordion`}
       style={{ width: props.width, borderRadius: `${props.rounded}px` }}
     >
       <button
@@ -53,7 +53,17 @@ export default function Accordion(props) {
         <FontAwesomeIcon icon="chevron-up" flip={flip} />
       </button>
       <div className="accordion-content" style={contentStyle}>
-        <p ref={contentRef}>{props.children}</p>
+        <div ref={contentRef}>
+          {props.list ? (
+            <ul>
+              {props.list.map((e, i) => (
+                <li>{e}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>{props.children}</p>
+          )}
+        </div>
       </div>
     </article>
   );
