@@ -23,8 +23,9 @@
   overflow: hidden;
   transition: height 0.5s ease-in-out;
 }
-.accordion-content p,
-.accordion-content ul {
+.accordion-content > * {
   padding: calc(100vw / 60);
+}
+.accordion-content ul {
   list-style: none;
 }

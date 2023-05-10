@@ -61,8 +61,9 @@ export default function Accordion(props) {
               ))}
             </ul>
           ) : (
-            <p>{props.children}</p>
+            <></>
           )}
+          <p>{props.children}</p>
         </div>
       </div>
     </article>
