@@ -38,7 +38,6 @@ export default function Accordion(props) {
   const contentStyle = {
     height: isActive ? `${contentHeight}px` : "0px",
   };
-  console.log(props.list);
   return (
     <article
       className={`accordion`}
