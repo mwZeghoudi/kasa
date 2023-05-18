@@ -40,7 +40,7 @@ export default function Card(props) {
     content = (
       <div className="card banner-card" style={cardStyle}>
         <span className="grey-filter" style={filterStyle}></span>
-        <span className="content" style={{ fontSize: "calc(100vw / 45) " }}>
+        <span className="content">
           {props.content}
         </span>
       </div>

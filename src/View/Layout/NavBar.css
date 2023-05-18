@@ -26,5 +26,27 @@ nav ul {
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  gap: 10%;
+  gap: calc(100vw / 50);
+}
+@media only screen and (max-width: 1000px) {
+  .nav-bar {
+    font-size: calc(100vw / 40);
+  }
+  .nav-logo {
+    font-size: calc(100vw / 15);
+  }
+  .nav-logo .logo {
+    width: calc(100vw * 0.045);
+  }
+}
+@media only screen and (max-width: 650px) {
+  .nav-bar {
+    font-size: calc(100vw / 25);
+  }
+  .nav-logo {
+    font-size: calc(100vw / 10);
+  }
+  .nav-logo .logo {
+    width: calc(100vw * 0.068);
+  }
 }

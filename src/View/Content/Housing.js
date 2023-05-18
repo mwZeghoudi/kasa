@@ -1,7 +1,8 @@
 import React from "react";
-import Tags from "../../Component/Tags";
 import Carrousel from "../../Component/Carrousel";
 import "./Housing.css";
+import HousingHeader from "../../Component/HousingHeader";
+import HousingInformation from "../../Component/HousingInformation";
 
 export default function Housing(props) {
   return (
@@ -15,7 +16,8 @@ export default function Housing(props) {
           "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg",
         ]}
       />
-      <Tags content={["Batignolle", "Montmartre"]} />
+      <HousingHeader />
+      <HousingInformation />
     </div>
   );
 }

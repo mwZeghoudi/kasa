@@ -4,6 +4,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: 20px;
+  margin: calc(100vw / 65) auto;
 }
 .carrousel-overlay {
   position: absolute;
@@ -41,4 +42,15 @@
   height: 100%;
   position: absolute;
   object-fit: cover;
+}
+@media only screen and (max-width: 600px) {
+  .carrousel {
+    height: calc(100vw / 2.5);
+  }
+  .carrousel-count {
+    font-size: calc(100vw / 50);
+  }
+  .carrousel button {
+    font-size: calc(100vw / 15);
+  }
 }

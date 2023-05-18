@@ -1,5 +1,5 @@
 .card {
-  padding: 50px;
+  padding: calc((100vw / 30));
   background: #ff6060;
   color: white;
   position: relative;
@@ -26,13 +26,13 @@
 .grey-card {
   background: #f7f7f7;
   width: calc(100vw * 0.85);
-  gap: 25px;
+  gap: calc((100vw / 30) / 2);
 }
 
 .location-card {
   padding: 20px;
-  width: calc(((100vw * 0.85) / 3) - 50px);
-  height: calc(((100vw * 0.85) / 3) - 50px);
+  width: calc(((100vw * 0.85) / 3) - (100vw / 30));
+  height: calc(((100vw * 0.85) / 3) - (100vw / 30));
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -40,4 +40,45 @@
   width: calc(100vw * 0.85);
   justify-content: center;
   padding: calc(100vw * 0.03);
+}
+.banner-card .content {
+  font-size: calc(100vw / 45);
+}
+
+@media only screen and (max-width: 800px) {
+  .location-card {
+    width: calc(((100vw * 0.85) / 2) - (100vw / 20));
+    height: calc(((100vw * 0.85) / 2) - (100vw / 20));
+  }
+  .card.grey-card {
+    gap: calc((100vw / 20) / 2);
+  }
+  .content {
+    font-size: calc(100vw / 45);
+  }
+  .banner-card {
+    padding: calc(100vw * 0.05);
+  }
+  .banner-card .content {
+    font-size: calc(100vw / 35);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .location-card {
+    width: calc(100vw * 0.85);
+    height: calc(100vw * 0.55);
+  }
+  .card.grey-card {
+    padding: 0;
+    flex-direction: column;
+  }
+  .content {
+    font-size: calc(100vw / 25);
+  }
+  .banner-card {
+    padding: calc(100vw * 0.05);
+  }
+  .banner-card .content {
+    font-size: calc(100vw / 25);
+  }
 }

@@ -1,5 +1,5 @@
 .accordion {
-  background-color: #f6f6f6;
+  background: linear-gradient(#f6f6f6, transparent, transparent, transparent);
   font-size: calc(100vw / 60);
   display: flex;
   flex-direction: column;
@@ -25,7 +25,21 @@
 }
 .accordion-content > * {
   padding: calc(100vw / 60);
+  background-color: #f6f6f6;
 }
 .accordion-content ul {
   list-style: none;
+}
+@media only screen and (max-width: 600px) {
+  .accordion {
+    font-size: calc(100vw / 40);
+  }
+  .accordion-btn {
+    height: calc(100vw / 15);
+    font-size: calc(100vw / 40);
+    padding: 0 calc(100vw / 40);
+  }
+  .accordion-content > * {
+    padding: calc(100vw / 40);
+  }
 }

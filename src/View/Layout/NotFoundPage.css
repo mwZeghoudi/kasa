@@ -1,9 +1,10 @@
 .error-404 {
+  height: 75vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: calc((100vh - 410px) / 5);
+  text-align: center;
 }
 .error-404 h2 {
   display: flex;
@@ -22,4 +23,26 @@
 .error-404 a {
   font-size: calc(100vw / 80);
   text-decoration: underline;
+}
+@media only screen and (max-width: 1000px) {
+  .error-404 {
+    height: 50vh;
+  }
+  .error-404 h2 {
+    font-size: calc(100vw / 4);
+  }
+  .error-404 .logo {
+    width: calc(100vw / 7);
+  }
+  .error-404 h1 {
+    font-size: calc(100vw / 20);
+  }
+  .error-404 a {
+    font-size: calc(100vw / 60);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .error-404 {
+    height: 30vh;
+  }
 }

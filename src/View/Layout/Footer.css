@@ -25,3 +25,15 @@
   bottom: -14px;
   margin: 0 2.5%;
 }
+@media only screen and (max-width: 800px) {
+  .footer {
+    height: auto;
+    font-size: 18px;
+    padding: 15px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer {
+    font-size: 15px;
+  }
+}
