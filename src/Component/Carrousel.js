@@ -27,7 +27,6 @@ export default function Carrousel(props) {
             key={i}
             className={"carrousel-picture"}
             data-index={i + 1}
-            data-active={i === 0 ? true : false}
             src={e}
           />
         ))}
@@ -44,45 +43,62 @@ export default function Carrousel(props) {
 
   const handleResize = () => {
     setPictureWidth(contentRefs.current.offsetWidth);
+    Array.from(contentRefs.current.children).forEach((e, i) => {
+      e.style.left = `${
+        contentRefs.current.offsetWidth * i - contentRefs.current.offsetWidth
+      }px`;
+    });
   };
-
-  const updateClone = () =>{
-    if (isAlreadyLoaded === false) {
-      Array.from(contentRefs.current.children).forEach((e, i) => {
-        e.style.left = `${(pictureWidth * i)}px`;
-      });
-      const clonedElement = contentRefs.current.lastChild.cloneNode(true);
-      contentRefs.current.insertBefore(clonedElement, contentRefs.current.firstChild);
-      contentRefs.current.firstChild.style.left = `${-pictureWidth}px`;
-      setIsAlreadyLoaded(true)
-    }
-
-  }
 
   useEffect(() => {
     if (dataLoaded && isAlreadyLoaded === false) {
-      updateClone()
+      const clonedElement = contentRefs.current.lastChild.cloneNode(true);
+      contentRefs.current.insertBefore(
+        clonedElement,
+        contentRefs.current.firstChild
+      );
+      Array.from(contentRefs.current.children).forEach((e, i) => {
+        e.style.left = `${pictureWidth * i - pictureWidth}px`;
+      });
+      setIsAlreadyLoaded(true);
     }
   }, [dataLoaded]);
+  const removeTransition = () => {
+    Array.from(contentRefs.current.children).forEach((e) => {
+      e.style.transition = null;
+    });
+  };
 
   const scrollPicture = (isNext) => {
-    const children = Array.from(contentRefs.current.children);
-    const oldPicture = children.find(child => child.dataset.active === "true");
-    let nextPicture;
-    const indexOldPicture = children.indexOf(oldPicture);
-
     if (isNext) {
-      nextPicture = children[indexOldPicture + 1];
-    }else{
-      nextPicture = children[indexOldPicture - 1];
+      contentRefs.current.removeChild(contentRefs.current.firstChild);
+      const clonedElement = contentRefs.current.firstChild.cloneNode(true);
+      contentRefs.current.insertBefore(
+        clonedElement,
+        contentRefs.current.lastChild.nextSibling
+      );
+      Array.from(contentRefs.current.children).forEach((e, i) => {
+        e.style.transition = "left 0.5s ease-in-out";
+        e.style.left = `${pictureWidth * i - pictureWidth}px`;
+      });
+    } else {
+      Array.from(contentRefs.current.children).forEach((e) => {
+        e.style.transition = "left 0.5s ease-in-out";
+        e.style.left = parseInt(e.style.left) + pictureWidth + "px";
+      });
+      contentRefs.current.removeChild(contentRefs.current.lastChild);
+      const clonedElement = contentRefs.current.lastChild.cloneNode(true);
+      clonedElement.style.left = `${-pictureWidth}px`;
+      contentRefs.current.insertBefore(
+        clonedElement,
+        contentRefs.current.firstChild
+      );
     }
-    oldPicture.dataset.active = 'false';
-    nextPicture.dataset.active = 'true';
+    setActiveIndex(contentRefs.current.children[1].dataset.index);
 
-    console.log(children);
-    console.log(oldPicture);
-    console.log(nextPicture);
-    console.log(indexOldPicture);
+    return new Promise(function (resolve) {
+      setTimeout(resolve, 600);
+    });
   };
 
   return (
@@ -92,8 +108,12 @@ export default function Carrousel(props) {
           <button
             id="carrousel-chevron-left"
             disabled={isCarousselDisabled}
-            onClick={function(){
-              scrollPicture(false)
+            onClick={function () {
+              setIsCarousselDisabled(true);
+              scrollPicture(false).then((value) => {
+                removeTransition();
+                setIsCarousselDisabled(false);
+              });
             }}
           >
             <FontAwesomeIcon icon="chevron-left" />
@@ -104,8 +124,12 @@ export default function Carrousel(props) {
           <button
             id="carrousel-chevron-right"
             disabled={isCarousselDisabled}
-            onClick={function(){
-              scrollPicture(true)
+            onClick={function () {
+              setIsCarousselDisabled(true);
+              scrollPicture(true).then((value) => {
+                removeTransition();
+                setIsCarousselDisabled(false);
+              });
             }}
           >
             <FontAwesomeIcon icon="chevron-right" />

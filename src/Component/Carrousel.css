@@ -41,5 +41,4 @@
   height: 100%;
   position: absolute;
   object-fit: cover;
-  transition: all ease-in-out 500ms;
 }
