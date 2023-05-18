@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./View/Layout/Header";
 import Footer from "./View/Layout/Footer";
 import NotFoundPage from "./View/Layout/NotFoundPage";
@@ -9,14 +10,17 @@ import Housing from "./View/Content/Housing";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Header />
-      <Housing />
-      <Home />
-      <About />
-      <NotFoundPage />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/housing" element={<Housing />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 
