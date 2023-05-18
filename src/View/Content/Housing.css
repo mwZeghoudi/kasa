@@ -1,5 +1,8 @@
 .housing-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin: auto;
+  width: calc(100vw * 0.85);
 }

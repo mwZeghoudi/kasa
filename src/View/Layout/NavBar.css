@@ -2,10 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 40px 0;
-  padding-left: calc(0.06 * 100vw);
-  padding-right: calc(0.06 * 100vw);
+  margin: calc(100vw / 65) auto;
   font-size: calc(100vw / 60);
+  width: calc(100vw * 0.85);
 }
 .nav-logo {
   font-size: calc(100vw / 25);
