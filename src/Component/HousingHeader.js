@@ -7,9 +7,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function HousingHeader(props) {
+  console.log(props);
   let stars = [];
   for (let i = 0; i < 5; i++) {
-    if (i < 3) {
+    if (i < parseInt(props.rating)) {
       stars.push(true);
     } else {
       stars.push(false);
@@ -18,26 +19,14 @@ export default function HousingHeader(props) {
   return (
     <div className="housing-header">
       <div className="heading">
-        <h1>Cozy loft on the Canal Saint-Martin</h1>
-        <h2>Paris, Île-de-France</h2>
-        <Tags
-          content={[
-            "TAG 1",
-            "TAG 1",
-            "TAG 1",
-            "TAG 1",
-            "TAG 1",
-            "TAG 1",
-            "TAG 1",
-            "TAG 1",
-            "TAG 1",
-          ]}
-        />
+        <h1>{props.title}</h1>
+        <h2>{props.location}</h2>
+        <Tags content={props.tags} />
       </div>
       <div className="host">
         <div className="host-id">
-          <h2>Alexandre Dumas</h2>
-          <img src="" alt="" />
+          <h2>{props.host.name}</h2>
+          <img src={props.host.picture} alt={props.host.name + "picture"} />
         </div>
         <div className="note">
           {stars.map((e) =>
