@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./View/Layout/NavBar";
+import Header from "./View/Layout/Header";
 import Footer from "./View/Layout/Footer";
 import NotFoundPage from "./View/Layout/NotFoundPage";
 import Home from "./View/Content/Home";
@@ -10,7 +10,7 @@ import Housing from "./View/Content/Housing";
 function App() {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Housing />
       <Home />
       <About />

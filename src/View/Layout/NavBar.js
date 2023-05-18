@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import NavBarLinks from "../../Component/NavBarLinks";
+
 export default function Navbar(props) {
   return (
     <nav className="nav-bar">
@@ -16,7 +16,13 @@ export default function Navbar(props) {
         </div>
         sa
       </div>
-      <NavBarLinks />
+      <ul>
+        <li>
+          <a href="" tabIndex={0}>
+            Accueil
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 }

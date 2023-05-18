@@ -22,3 +22,10 @@
   bottom: calc(-20.88vw / 25);
   margin: 0 2.5%;
 }
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 10%;
+}
