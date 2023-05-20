@@ -17,14 +17,14 @@
   justify-content: space-between;
 }
 .carrousel button {
-  font-size: calc(100vw / 25);
+  font-size: clamp(15px, calc(100vw / 25), 60px);
   background-color: inherit;
   border: none;
   color: white;
   cursor: pointer;
 }
 .carrousel-count {
-  font-size: calc(100vw / 85);
+  font-size: clamp(5px, calc(100vw / 85), 20px);
   color: white;
   align-self: flex-end;
 }

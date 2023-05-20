@@ -42,6 +42,7 @@ export default function Accordion(props) {
     <article
       className={`accordion`}
       style={{ width: props.width, borderRadius: `${props.rounded}px` }}
+      key={props.name}
     >
       <button
         className="accordion-btn"

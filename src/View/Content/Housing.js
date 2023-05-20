@@ -38,7 +38,7 @@ export default function Housing(props) {
     <>
       {isLoaded ? (
         <div className="housing-container">
-          <Carrousel picture={house.pictures} />
+          <Carrousel picture={house.pictures} name={house.title}/>
           <HousingHeader
             title={house.title}
             location={house.location}

@@ -28,6 +28,7 @@ export default function Carrousel(props) {
             className={"carrousel-picture"}
             data-index={i + 1}
             src={e}
+            alt={props.name + "-" + (i + 1)}
           />
         ))}
       </>
@@ -107,7 +108,9 @@ export default function Carrousel(props) {
         <div className="carrousel-overlay">
           <button
             id="carrousel-chevron-left"
+            name="carrousel-left"
             disabled={isCarousselDisabled}
+            tabIndex={0}
             onClick={function () {
               setIsCarousselDisabled(true);
               scrollPicture(false).then((value) => {
@@ -123,7 +126,9 @@ export default function Carrousel(props) {
           </span>
           <button
             id="carrousel-chevron-right"
+            name="carrousel-right"
             disabled={isCarousselDisabled}
+            tabIndex={0}
             onClick={function () {
               setIsCarousselDisabled(true);
               scrollPicture(true).then((value) => {

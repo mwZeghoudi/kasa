@@ -5,7 +5,7 @@ import Accordion from "./Accordion";
 export default function HousingInformation(props) {
   return (
     <div className="housing-accordion">
-      <Accordion name={"Description"} rounded={5}>
+      <Accordion name={"Description"} rounded={5} key='Description'>
         {props.description}
       </Accordion>
       <Accordion

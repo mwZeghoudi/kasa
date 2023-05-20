@@ -36,11 +36,7 @@ export default function About() {
   return (
     <div className="about-container">
       <Card rounded={10} isBanner={true} image={landScapePicture} />
-      <Accordion
-        name={"Fiabilite"}
-        list={["Bouilloire", "Wi-fi", "Micro-Ondes"]}
-        rounded={5}
-      >
+      <Accordion name={"Fiabilite"} rounded={5}>
         Les annonces postées sur Kasa garantissent une fiabilité totale. Les
         photos sont conformes aux logements, et toutes les informations sont
         régulièrement vérifiées par nos équipes.

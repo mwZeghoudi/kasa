@@ -1,11 +1,11 @@
 import React from "react";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
     <nav className="nav-bar">
-      <Link to={"/"} href="" tabIndex={0}>
+      <NavLink to={"/"} activeClassName="activeLink" tabIndex={0}>
         <div className="nav-logo">
           K
           <div className="logo" tabIndex={0}>
@@ -18,17 +18,17 @@ export default function Navbar(props) {
           </div>
           sa
         </div>
-      </Link>
+      </NavLink>
       <ul>
         <li>
-          <Link to={"/"} href="" tabIndex={0}>
+          <NavLink to={"/"} activeClassName="activeLink" tabIndex={0}>
             Accueil
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={"/about"} href="" tabIndex={0}>
+          <NavLink to={"/about"} activeClassName="activeLink" tabIndex={0}>
             A Propos
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

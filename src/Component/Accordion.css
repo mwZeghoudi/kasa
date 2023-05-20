@@ -1,6 +1,6 @@
 .accordion {
   background: linear-gradient(#f6f6f6, transparent, transparent, transparent);
-  font-size: calc(100vw / 60);
+  font-size: clamp(15px, calc(100vw / 60), 20px);
   display: flex;
   flex-direction: column;
 }

@@ -7,7 +7,6 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function HousingHeader(props) {
-  console.log(props);
   let stars = [];
   for (let i = 0; i < 5; i++) {
     if (i < parseInt(props.rating)) {
