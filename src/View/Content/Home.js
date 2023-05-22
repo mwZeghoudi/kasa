@@ -3,30 +3,15 @@ import { useState, useEffect } from "react";
 import Card from "../../Component/Card";
 import "./Home.css";
 import { createClient } from "pexels";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Link } from "react-router-dom";
+import logementArray from "../../logement-data.json";
 
 export default function Home() {
-  const [housing, setHousing] = useState([]);
   const [landScapePicture, setLandScapePicture] = useState(
     "https://img.freepik.com/photos-gratuite/jetee-au-bord-lac-hallstatt-autriche_181624-44201.jpg"
   );
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/logement-data.json`)
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error("La réponse du serveur n'est pas OK");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setHousing(data);
-      })
-      .catch((error) => {
-        console.error("Une erreur s'est produite :", error);
-      });
-
     const client = createClient(
       "IUYd1xTYs3jOIKIQMrVB5nQrBu6uZ2puDY8kZnqqCD6PClurqoReoeva"
     );
@@ -56,7 +41,7 @@ export default function Home() {
         image={landScapePicture}
       />
       <Card rounded={25} isGrey={true}>
-        {housing.map((e) => (
+        {logementArray.map((e) => (
           <Link to={"/housing/" + e.id}>
             <Card
               key={e.id}
