@@ -47,7 +47,7 @@ export default function Home() {
           />
           <Card rounded={25} isGrey={true}>
             {logementArray.map((e) => (
-              <Link to={"/housing/" + e.id}>
+              <Link to={"/kasa/housing/" + e.id}>
                 <Card
                   key={e.id}
                   rounded={10}

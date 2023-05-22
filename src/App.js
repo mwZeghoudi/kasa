@@ -14,11 +14,11 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/housing/:productId" element={<Housing />} />
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/not-found" element={<NotFoundPage />} />
+        <Route path="/kasa" element={<Home />} />
+        <Route path="/kasa/about" element={<About />} />
+        <Route path="/kasa/housing/:productId" element={<Housing />} />
+        <Route path="/kasa/*" element={<NotFoundPage />} />
+        <Route path="/kasa/not-found" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
