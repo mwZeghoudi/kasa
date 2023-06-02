@@ -25,6 +25,9 @@
   bottom: -14px;
   margin: 0 2.5%;
 }
+.footer p {
+  text-align: center;
+}
 @media only screen and (max-width: 800px) {
   .footer {
     height: auto;
@@ -35,5 +38,14 @@
 @media only screen and (max-width: 600px) {
   .footer {
     font-size: 15px;
+  }
+  .footer-logo {
+    font-size: calc(100vw / 10);
+  }
+  .footer-logo .logo {
+    width: calc(100vw * 0.068);
+  }
+  .footer-logo .logo .logo-img {
+    bottom: -8px;
   }
 }

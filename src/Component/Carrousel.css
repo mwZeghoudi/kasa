@@ -45,7 +45,7 @@
 }
 @media only screen and (max-width: 600px) {
   .carrousel {
-    height: calc(100vw / 2.5);
+    height: calc(100vw * 0.55);
   }
   .carrousel-count {
     font-size: calc(100vw / 50);

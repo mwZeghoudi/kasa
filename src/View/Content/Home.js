@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <div className="home-container">
       <Card
+        key={1}
         rounded={10}
         content={"Chez vous, partout et ailleurs"}
         isBanner={true}

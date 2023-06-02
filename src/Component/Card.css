@@ -1,5 +1,5 @@
 .card {
-  padding: calc((100vw / 30));
+  padding: clamp(5px, calc((100vw / 30)), 32px);
   background: #ff6060;
   color: white;
   position: relative;
@@ -25,21 +25,23 @@
 }
 .grey-card {
   background: #f7f7f7;
-  width: calc(100vw * 0.85);
-  gap: calc((100vw / 30) / 2);
+  width: clamp(10%, calc(100vw * 0.85), 1600px);
+  gap: clamp(5px, calc((100vw / 30) / 2), 18px);
 }
 .grey-filter {
   background: rgba(0, 0, 0, 0.3);
 }
 .location-card {
   padding: 20px;
-  width: calc(((100vw * 0.85) / 3) - (100vw / 30));
-  height: calc(((100vw * 0.85) / 3) - (100vw / 30));
+  width: calc(((100vw * 0.85) / 3) - clamp(5px, calc((100vw / 30)), 34px));
+  height: calc(((100vw * 0.85) / 3) - clamp(5px, calc((100vw / 30)), 34px));
+  max-width: 500px;
+  max-height: 500px;
   flex-direction: column;
   justify-content: flex-end;
 }
 .banner-card {
-  width: calc(100vw * 0.85);
+  width: clamp(10%, calc(100vw * 0.85), 1600px);
   justify-content: center;
   padding: calc(100vw * 0.03);
 }
@@ -71,10 +73,11 @@
 @media only screen and (max-width: 600px) {
   .location-card {
     width: calc(100vw * 0.85);
-    height: calc(100vw * 0.55);
+    height: calc(100vw * 0.65);
   }
   .card.grey-card {
     padding: 0;
+    background-color: inherit;
     flex-direction: column;
   }
   .content {

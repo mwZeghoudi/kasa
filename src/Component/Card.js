@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Card.css";
 
 export default function Card(props) {
+  const [isMobile, setIsMobile] = useState(false);
+  const [text, setText] = useState(props.content);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 600) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    if (props.isBanner && props.content) {
+      if (window.innerWidth <= 600) {
+        const newText = text.split(",");
+        setText(
+          <>
+            {newText[0] + ","}
+            <br />
+            {newText[1]}
+          </>
+        );
+      } else {
+        setText(props.content);
+      }
+    }
+  }, [isMobile]);
+
   let gradient;
   let content;
   const filterStyle = { borderRadius: `${props.rounded}px` };
@@ -34,27 +67,10 @@ export default function Card(props) {
     );
   }
   if (props.isBanner) {
-    let contentSpan;
-    let contentTXT = props.content;
-    if (props.content) {
-      if (window.innerWidth <= 600) {
-        const newTXT = contentTXT.split(",");
-        contentSpan = (
-          <span className="content">
-            {newTXT[0]}
-            <br />
-            {newTXT[1]}
-          </span>
-        );
-      } else {
-        contentSpan = <span className="content">{contentTXT}</span>;
-      }
-    }
-
     content = (
       <div className="card banner-card" style={cardStyle}>
         <span className="gradient grey-filter" style={filterStyle}></span>
-        {contentSpan}
+        <span className="content">{text}</span>
       </div>
     );
   }
