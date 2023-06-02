@@ -29,6 +29,7 @@ export default function Carrousel(props) {
             data-index={i + 1}
             src={e}
             alt={props.name + "-" + (i + 1)}
+            draggable={false}
           />
         ))}
       </>

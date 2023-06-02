@@ -13,6 +13,7 @@ export default function NotFoundPage() {
             className="logo-img"
             alt="Logo Kasa"
             width={30}
+            draggable={false}
           />
         </div>
         4

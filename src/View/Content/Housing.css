@@ -4,5 +4,5 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: calc(100vw * 0.85);
+  width: clamp(70%, calc(100vw * 0.85), 1600px);
 }

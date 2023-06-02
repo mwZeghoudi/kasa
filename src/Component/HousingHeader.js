@@ -25,7 +25,11 @@ export default function HousingHeader(props) {
       <div className="host">
         <div className="host-id">
           <h2>{props.host.name}</h2>
-          <img src={props.host.picture} alt={props.host.name + "picture"} />
+          <img
+            src={props.host.picture}
+            alt={props.host.name + "picture"}
+            draggable={false}
+          />
         </div>
         <div className="note">
           {stars.map((e) =>

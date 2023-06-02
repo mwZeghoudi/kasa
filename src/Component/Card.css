@@ -28,7 +28,9 @@
   width: calc(100vw * 0.85);
   gap: calc((100vw / 30) / 2);
 }
-
+.grey-filter {
+  background: rgba(0, 0, 0, 0.3);
+}
 .location-card {
   padding: 20px;
   width: calc(((100vw * 0.85) / 3) - (100vw / 30));
@@ -40,6 +42,9 @@
   width: calc(100vw * 0.85);
   justify-content: center;
   padding: calc(100vw * 0.03);
+}
+.about-container .banner-card {
+  height: calc(100vw * 0.16);
 }
 .banner-card .content {
   font-size: clamp(20px, calc(100vw / 45), 60px);
@@ -80,5 +85,11 @@
   }
   .banner-card .content {
     font-size: calc(100vw / 25);
+  }
+  .about-container .banner-card {
+    height: calc(100vw * 0.55);
+  }
+  .banner-card {
+    justify-content: left;
   }
 }

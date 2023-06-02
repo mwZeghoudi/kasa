@@ -34,15 +34,27 @@ export default function Card(props) {
     );
   }
   if (props.isBanner) {
-    if (!props.content) {
-      cardStyle.height = "calc(100vw * 0.16)";
+    let contentSpan;
+    let contentTXT = props.content;
+    if (props.content) {
+      if (window.innerWidth <= 600) {
+        const newTXT = contentTXT.split(",");
+        contentSpan = (
+          <span className="content">
+            {newTXT[0]}
+            <br />
+            {newTXT[1]}
+          </span>
+        );
+      } else {
+        contentSpan = <span className="content">{contentTXT}</span>;
+      }
     }
+
     content = (
       <div className="card banner-card" style={cardStyle}>
-        <span className="grey-filter" style={filterStyle}></span>
-        <span className="content">
-          {props.content}
-        </span>
+        <span className="gradient grey-filter" style={filterStyle}></span>
+        {contentSpan}
       </div>
     );
   }

@@ -14,6 +14,7 @@ export default function Navbar(props) {
               className="logo-img"
               alt="Logo Kasa"
               width={30}
+              draggable={false}
             />
           </div>
           sa

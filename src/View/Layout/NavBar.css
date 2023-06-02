@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: calc(100vw / 65) auto;
+  margin: 0 auto;
+  padding: calc(100vw / 65) 0;
   font-size: clamp(15px, calc(100vw / 60), 20px);
-  width: calc(100vw * 0.85);
+  width: clamp(70%, calc(100vw * 0.85), 1600px);
 }
 .nav-logo {
   font-size: clamp(20px, calc(100vw / 25), 60px);
