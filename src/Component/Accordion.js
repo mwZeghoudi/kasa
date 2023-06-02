@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Accordion(props) {
   library.add(faChevronUp);
   const [isActive, setIsActive] = useState(false);
-  const [flip, setFlip] = useState("");
+  const [flip, setFlip] = useState("vertical");
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(100);
 
@@ -25,9 +25,9 @@ export default function Accordion(props) {
   const handleClick = () => {
     setIsActive(!isActive);
     if (!isActive) {
-      setFlip("vertical");
+      setFlip(null);
     } else {
-      setFlip(false);
+      setFlip("vertical");
     }
   };
 
@@ -38,6 +38,7 @@ export default function Accordion(props) {
   const contentStyle = {
     height: isActive ? `${contentHeight}px` : "0px",
   };
+
   return (
     <article
       className={`accordion`}

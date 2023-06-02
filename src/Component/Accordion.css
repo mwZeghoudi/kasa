@@ -23,10 +23,10 @@
   width: 100%;
   overflow: hidden;
   transition: height 0.5s ease-in-out;
+  background-color: #f6f6f6;
 }
 .accordion-content > * {
   padding: calc(100vw / 60);
-  background-color: #f6f6f6;
 }
 .accordion-content ul {
   list-style: none;
