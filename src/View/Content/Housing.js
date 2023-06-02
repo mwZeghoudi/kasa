@@ -5,6 +5,8 @@ import HousingHeader from "../../Component/HousingHeader";
 import HousingInformation from "../../Component/HousingInformation";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import logementArray from "../../logement-data.json";
+import Loader from "../../Component/Loader";
 
 export default function Housing(props) {
   const { productId } = useParams();
@@ -13,27 +15,15 @@ export default function Housing(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/logement-data.json`)
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error("La réponse du serveur n'est pas OK");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const targetObject = data.find((item) => item.id === productId);
-        if (targetObject) {
-          setHouse(targetObject);
-          setIsLoaded(true);
-        } else {
-          navigate("/not-found");
-        }
-      })
-      .catch((error) => {
-        console.error("Une erreur s'est produite :", error);
-        navigate("/not-found");
-      });
+    const targetObject = logementArray.find((item) => item.id === productId);
+    if (targetObject) {
+      setHouse(targetObject);
+      setIsLoaded(true);
+    } else {
+      navigate("/not-found");
+    }
   }, []);
+
   return (
     <>
       {isLoaded ? (
@@ -52,7 +42,7 @@ export default function Housing(props) {
           />
         </div>
       ) : (
-        <></>
+        <Loader></Loader>
       )}
     </>
   );
