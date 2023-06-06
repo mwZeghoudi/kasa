@@ -8,7 +8,7 @@ import Housing from "../Content/Housing";
 export default function Routing() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/kasa" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/housing/:productId" element={<Housing />} />
       <Route path="/*" element={<NotFoundPage />} />

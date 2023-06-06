@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <nav className="nav-bar">
-      <NavLink to={"/"} activeClassName="activeLink" tabIndex={0}>
+      <NavLink to={"/kasa"} activeClassName="activeLink" tabIndex={0}>
         <div className="nav-logo">
           K
           <div className="logo" tabIndex={0}>
@@ -22,7 +22,7 @@ export default function Navbar(props) {
       </NavLink>
       <ul>
         <li>
-          <NavLink to={"/"} activeClassName="activeLink" tabIndex={0}>
+          <NavLink to={"/kasa"} activeClassName="activeLink" tabIndex={0}>
             Accueil
           </NavLink>
         </li>

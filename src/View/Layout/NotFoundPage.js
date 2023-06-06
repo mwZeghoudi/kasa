@@ -19,7 +19,7 @@ export default function NotFoundPage() {
         4
       </h2>
       <h1>Oups! La page que vous demandez n'existe pas.</h1>
-      <Link to={"/"}>Retourner sur la page d'accueil</Link>
+      <Link to={"/kasa"}>Retourner sur la page d'accueil</Link>
     </div>
   );
 }
